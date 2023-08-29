@@ -1,0 +1,34 @@
+﻿@model IEnumerable<AuditEFCore.Models.Person>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>შაბლონების სია</h1>
+
+
+<table class="table">
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CustomerName)  @Html.DisplayFor(modelItem => item.CommentOne)
+
+                    @Html.DisplayFor(modelItem => item.SendData)
+
+                    @Html.DisplayFor(modelItem => item.CommentTwo)
+
+                    @Html.DisplayFor(modelItem => item.EmployeeName)
+
+                    @Html.DisplayFor(modelItem => item.CommentThree)
+
+                    @Html.DisplayFor(modelItem => item.Category)
+
+                    @Html.DisplayFor(modelItem => item.ContactType)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

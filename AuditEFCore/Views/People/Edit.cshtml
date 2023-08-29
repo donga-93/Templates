@@ -1,0 +1,77 @@
+﻿@model AuditEFCore.Models.Person
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Person</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="CustomerName" class="control-label"></label>
+                <input asp-for="CustomerName" class="form-control" />
+                <span asp-validation-for="CustomerName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CommentOne" class="control-label"></label>
+                <input asp-for="CommentOne" class="form-control" style="width: 350px; height: 100px;" />
+                <span asp-validation-for="CommentOne" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SendData" class="control-label"></label>
+                <input asp-for="SendData" class="form-control" />
+                <span asp-validation-for="SendData" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CommentTwo" class="control-label"></label>
+                <input asp-for="CommentTwo" class="form-control" style="width: 350px; height: 100px;" />
+                <span asp-validation-for="CommentTwo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EmployeeName" class="control-label"></label>
+                <input asp-for="EmployeeName" class="form-control" />
+                <span asp-validation-for="EmployeeName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CommentThree" class="control-label"></label>
+                <select asp-for="CommentThree">
+                    <option selected disabled> -- აირჩიე კონტაქტის კატეგორია</option>
+                    <option>გთხოვთ, ნებისმიერ საკითხზე დაუკავშირდეთ მას მეილზე: </option>
+                    <option>გთხოვთ, ნებისმიერ საკითხზე დაუკავშირდეთ მას მობილურზე: </option>
+                </select>
+                <span asp-validation-for="CommentThree" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Category" class="control-label"></label>
+                <select asp-for="Category">
+                    <option selected disabled> -- აირჩიე კონტაქტის კატეგორია</option>
+                    <option>Mobile Number: </option>
+                    <option>Mail: </option>
+                </select>
+                <span asp-validation-for="Category" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ContactType" class="control-label"></label>
+                <input asp-for="ContactType" class="form-control" />
+                <span asp-validation-for="ContactType" class="text-danger"></span>
+            </div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
